@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+spawn /start.sh
+expect {
+    "Password (*):" {
+        send "\n"
+    }
+}
+expect {
+    "TOTP secret (leave blank if not required) (*):" {
+        send "\n"
+    }
+}
+interact
