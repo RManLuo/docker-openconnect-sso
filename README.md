@@ -23,10 +23,11 @@ docker run -itd --privileged --name=anyconnect-sso-x11 -v /dev/shm:/dev/shm -v /
 docker run -itd --privileged --name=anyconnect-sso-x11 -v /dev/shm:/dev/shm -v /tmp/.X11-unix:/tmp/.X11-unix -e SERVER_NAME=vpn.xx.edu -e USER_NAME=xxx@xx.edu -e DISPLAY=host.docker.internal:0.0 -p 127.0.0.1:10081:1080 --restart=unless-stopped rmanluo/openconnect-sso-x11:latest
 ```
 
-3. Input your login information in the pop-up window.   
+3. Input your login information in the pop-up window.
+> Note: If no windows are displayed, please check if X11 on your host machine is properly set up.   
 <img src="./resources/login.png" width = "500" align=center />
 
-4. Complete the 2FA authentication.   
+5. Complete the 2FA authentication.   
 <img src="./resources/2fa.png" width = "500" align=center />
 
 It will open a socks5 proxy on port 10081 on your host machine. You can use it with your browser or other tools.
